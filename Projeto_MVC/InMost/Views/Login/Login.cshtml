@@ -5,5 +5,34 @@
 }
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Login</h3>
 
+
+            @using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { @name = "form1", @class = "form-horizontal" }))
+            {
+
+                <div class="form-group">
+                    <label for="Usuario" class="control-label">Usuario</label>
+                    @Html.TextBoxFor(m => m.User, new { @class = "form-control" })
+
+                    <label for="Usuario" class="control-label">Senha</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+
+                                <button class="ui-button-icon-primary" type="submit">Entrar</button>
+
+
+            }
+
+           
+
+        </div>
+    </div>
+
+
+
+</div>
 

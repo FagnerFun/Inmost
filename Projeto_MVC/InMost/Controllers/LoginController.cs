@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InMost.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,15 @@ namespace InMost.Controllers
         {
             return View();
         }
+
+        public ActionResult Logar(LoginModel model)
+        {
+
+
+
+
+            return View();
+        }
+
     }
 }
