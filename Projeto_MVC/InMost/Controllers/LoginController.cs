@@ -1,4 +1,5 @@
-﻿using InMost.Models;
+﻿using InMost.BLL;
+using InMost.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,22 @@ namespace InMost.Controllers
         {
             return View();
         }
-
-        public ActionResult Logar(LoginModel model)
+        
+        [HttpPost]
+        public ActionResult Logar(LoginModel login)
         {
+            LoginBLL BLL = new LoginBLL();
+            if(BLL.VerificaLogin(login))
+            {
+                ViewBag.Validacao = true;
+                Session["USR"] = login;
+                return RedirectToAction("Index", "Home");
+
+            }
 
 
-
-
-            return View();
+            ViewBag.Validacao = false;
+            return View("login",login);
         }
 
     }

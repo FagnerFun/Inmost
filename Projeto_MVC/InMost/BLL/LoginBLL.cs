@@ -6,48 +6,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Data;
 
 namespace InMost.BLL
 {
     class LoginBLL
     {
-        #region 
-        private LoginDAO _DAO = null;
-        public LoginDAO LoginDAO
-        {
-            get
-            {
-                if (_DAO == null)
-                    _DAO = new LoginDAO();
-                return _DAO;
-            }
-        }
-
-        #endregion
+        
 
         public bool VerificaLogin(LoginModel model)
         {
-            if(!string.IsNullOrEmpty(model.User) || !string.IsNullOrEmpty(model.Password))
-                if(model.User.Length > 0 && model.User.Length <= 50 && model.Password.Length > 0 && model.Password.Length < 20)
+            LoginDAO DAO = new LoginDAO();
+
+            if(!string.IsNullOrEmpty(model.User) && !string.IsNullOrEmpty(model.Password))
+                if(model.User.Length > 0 && model.User.Length <= 200 && model.Password.Length >= 4 && model.Password.Length < 20)
                 {
-                    _DAO.EfetuaLogin(LoginModeltoLoginEntity(model));
-                     
+                    DataTable data = DAO.EfetuaLogin(LoginModeltoLoginEntity(model));
+
+                    return data.Rows.Count > 0; 
+
+                                         
                 } 
 
             return false;
         }
 
-        public void MD5()
+        public string MD5(string texto)
         {
-            //Implementar MD5
+            MD5CryptoServiceProvider hashMD5 = new MD5CryptoServiceProvider();
+            TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider();
+            des.Key = hashMD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes("BetaInmost"));
+            des.Mode = CipherMode.ECB;
+
+            ICryptoTransform crypt = des.CreateEncryptor();
+
+            byte[] buff = ASCIIEncoding.ASCII.GetBytes(texto);
+            return Convert.ToBase64String(crypt.TransformFinalBlock(buff, 0, buff.Length));
         }
 
 
-        public LoginEntity LoginModeltoLoginEntity(LoginModel model)
+        private LoginEntity LoginModeltoLoginEntity(LoginModel model)
         {
             LoginEntity entity = new LoginEntity();
-            entity.User = model.User;
-            entity.Password = model.Password;
+            entity.Email = model.User;
+            entity.Senha = MD5(model.Password);
             return entity;
         }
 

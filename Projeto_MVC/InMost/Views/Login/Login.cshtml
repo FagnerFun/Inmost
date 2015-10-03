@@ -36,3 +36,14 @@
 
 </div>
 
+    @if (ViewBag.Validacao != null)
+    {
+        if (ViewBag.Validacao == false)
+        {
+            <script>
+                swal("Desculpe", "Usuario Invalido", "error");
+            </script>
+        }
+      
+    }
+
