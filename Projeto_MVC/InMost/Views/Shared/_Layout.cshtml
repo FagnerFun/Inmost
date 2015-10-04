@@ -3,34 +3,35 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Página Inicial</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link  href="~/Content/sweetalert.css" rel="stylesheet" type="text/css">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="~/Content/estilo.css">
+    <link rel="stylesheet" href="~/Content/flaticon.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
     
-  
-
-
-
-
-    
-    
-    
-    
-    
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - A Beta é Foda!</p>
-        </footer>
+    <div id="menu">
+        <i class="flaticon-menu55 iconMenu"></i>
+        <div class="toogle">
+            <nav>
+                <i class="flaticon-black400"></i>
+                <p>titulo</p>
+            </nav>
+        </div>
     </div>
+    
+    
+  
+        @RenderBody()
+       
+        <footer>
+            <p>todos os direitos reservados # Beta Inmost 2015</p>
+        </footer>
+ 
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

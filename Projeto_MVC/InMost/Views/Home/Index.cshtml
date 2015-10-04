@@ -3,6 +3,37 @@
     ViewBag.Title = "Index";
 }
 
+<br /><br /><br />
 
 
-HOME page
+<p>Apelido</p>
+
+@Html.TextBoxFor(m => m.Apelido)
+
+<br />
+<br /><br />
+<p>Nome</p>
+
+@Html.TextBoxFor(m => m.Nome)
+<br /><br /><br />
+<p>Foto do cara</p>
+
+@Html.TextBoxFor(m => m.Url_foto)
+
+
+<button type="button">Encerrar</button>
+
+<table>
+    <th>Nome</th>
+    <th>Apelido</th>
+    <th>foto</th>
+    @foreach (var membro in Model.membros)
+    {
+        <tr>
+            <td>@membro.Nome</td>
+            <td>@membro.Apelido </td>
+            <td>@membro.Url_foto</td>
+        </tr>
+    }
+
+</table>

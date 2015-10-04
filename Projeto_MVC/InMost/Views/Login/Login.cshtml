@@ -4,37 +4,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+     
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Login</h3>
+        <img src="~/img/logo.png" alt="Beta Inmost" class="logo">
 
-
-            @using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { @name = "form1", @class = "form-horizontal" }))
-            {
-
-                <div class="form-group">
-                    <label for="Usuario" class="control-label">Usuario</label>
-                    @Html.TextBoxFor(m => m.User, new { @class = "form-control" })
-
-                    <label for="Usuario" class="control-label">Senha</label>
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                </div>
-
-                                <button class="ui-button-icon-primary" type="submit">Entrar</button>
-
-
-            }
-
-           
-
-        </div>
-    </div>
+        <main>
+            <div class="box-login">
+                @using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { @name = "form1", @class = "form-horizontal" }))
+                {
+                    <label>
+                        <i class="flaticon-users91"></i>
+                        @Html.TextBoxFor(m => m.User , new { @type = "email", @placeholder = "email", @class="margin-icon"})
+                    </label>
+                    <label>
+                        <i class="flaticon-key59"></i>
+                        @Html.PasswordFor(m => m.Password, new { @type = "password", @placeholder = "senha", @class="margin-icon" } )
+                    </label>
+                    
+                    <input type="submit" value="entrar" class="tt-upper">
 
 
+                }
+                    
 
-</div>
+               
+            </div>
+        </main>
+
+
 
     @if (ViewBag.Validacao != null)
     {
@@ -43,7 +40,7 @@
             <script>
                 swal("Desculpe", "Usuario Invalido", "error");
             </script>
+            }
+
         }
-      
-    }
 

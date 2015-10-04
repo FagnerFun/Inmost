@@ -91,12 +91,20 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilo.css" />
+    <Content Include="Content\flaticon.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\sweetalert.css" />
+    <Content Include="fonts\flaticon.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\back.jpg" />
+    <Content Include="img\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\flaticon.eot" />
+    <Content Include="fonts\flaticon.ttf" />
+    <Content Include="fonts\flaticon.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -107,17 +115,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\HomeBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\HomeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="Entity\HomeEntity.cs" />
     <Compile Include="Entity\LoginEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Membros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

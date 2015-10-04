@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace InMost.Models
 {
-    public class HomeModel
+    public class Membros
     {
-        public string Email  { get; set; }
+        public string Email { get; set; }
         public string Nome { get; set; }
         public string Apelido { get; set; }
         public string Url_foto { get; set; }
-
-        public List<Membros> membros { get; set; }
-
     }
 }
