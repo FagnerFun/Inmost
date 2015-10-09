@@ -37,16 +37,11 @@ namespace InMost.BLL
                             model.membros = new List<Membros>();
                         model.membros.Add(m);
                     }
-
-
                     return model;
-
                 }
 
             return null;
         }
-
-
 
         public HomeEntity ModelToEntity(HomeModel model)
         {

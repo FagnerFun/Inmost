@@ -25,7 +25,6 @@ namespace InMost.Controllers
                 ViewBag.Validacao = true;
                 Session["USR"] = login;
                 return RedirectToAction("Index", "Home");
-
             }
 
 
