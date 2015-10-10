@@ -27,6 +27,8 @@ namespace InMost.Controllers
             return View(model);
         }
 
+
+        
        
 
         public void LoadIndex(HomeModel model)
@@ -34,7 +36,6 @@ namespace InMost.Controllers
 
             HomeBLL BLL = new HomeBLL();
             BLL.CarregaUsuario(model);
-
 
         }
 

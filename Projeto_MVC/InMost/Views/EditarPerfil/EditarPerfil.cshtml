@@ -4,5 +4,98 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditarPerfil</h2>
+    <img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+
+
+  
+    @using (Html.BeginForm("SalvarEditarPerfil", "EditarPerfil", FormMethod.Post))
+    {
+        <div class="control-label">
+            <div id="formulario" class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-5">
+                        <label class="itens">
+                            @Html.TextBoxFor(m => m.Nome, new { @placeholder = "Nome" })
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>
+                            @Html.TextBoxFor(m => m.Apelido, new { @placeholder = "Apelido" })
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-5">
+                        <label>
+                            @Html.TextBoxFor(m => m.Sexo, new { @placeholder = "Sexo" })
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>
+                            @Html.TextBoxFor(m => m.PrefSexual, new { @placeholder = "Preferencia Sexual" })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-2">
+                        <label>
+                            @Html.TextBoxFor(m => m.Ddd, new { @placeholder = "DDD" })
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            @Html.TextBoxFor(m => m.Telefone, new { @placeholder = "Telefone" })
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>
+                            @Html.TextBoxFor(m => m.DataNascimento, new { @placeholder = "DataNascimento" })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-10">
+                        <label>
+                            @Html.TextBoxFor(m => m.SenhaAntiga, new { @placeholder = "Senha Antiga" })
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-10">
+                        <label>
+                            @Html.TextBoxFor(m => m.SenhaNova, new { @placeholder = "Nova Senha" })
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-10">
+                        <label>
+                            @Html.TextBoxFor(m => m.Descricao, new { @placeholder = "Descrição" })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="col-md-3">
+                        <input type="button" class="tt-upper" value="Cadastrar"/>
+                      
+                    </div>
+                </div>
+
+
+
+            </div>
+                </div>
+
+                <br /><br />
+
+
+                }
+
+
+
 

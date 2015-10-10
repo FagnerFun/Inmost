@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InMost.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,19 @@ namespace InMost.Controllers
     public class EditarPerfilController : Controller
     {
         // GET: EditarPerfil
-        public ActionResult Index()
+        public ActionResult EditarPerfil()
         {
             return View();
+        }
+
+
+        public ActionResult SalvarEditarPerfil(EditarPerfilModel model)
+        {
+
+
+
+
+            return View(model);
         }
     }
 }
