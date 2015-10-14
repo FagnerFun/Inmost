@@ -115,19 +115,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\ConvidarBLL.cs" />
     <Compile Include="BLL\HomeBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\NotificacaoBLL.cs" />
+    <Compile Include="Controllers\ConvidarController.cs" />
     <Compile Include="Controllers\EditarPerfilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ThreadNotificacaoController.cs" />
     <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\ConvidarDAO.cs" />
     <Compile Include="DAO\HomeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="Entity\HomeEntity.cs" />
     <Compile Include="Entity\LoginEntity.cs" />
+    <Compile Include="Entity\NotificacaoEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConvidarModel.cs" />
     <Compile Include="Models\EditarPerfilModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -145,6 +152,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\EditarPerfil\EditarPerfil.cshtml" />
+    <Content Include="Views\Convidar\Convidar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ThreadNotificacao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
