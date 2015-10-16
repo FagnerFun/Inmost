@@ -6,30 +6,41 @@
 
      
 
-        <img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+ <i class="flaticon-menu55 iconMenu btn-menu"></i>
 
-        <main>
-            <div class="box-login">
-                @using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { @name = "form1", @class = "form-horizontal" }))
-                {
-                    <label>
-                        <i class="flaticon-users91"></i>
-                        @Html.TextBoxFor(m => m.User , new { @type = "email", @placeholder = "email", @class="margin-icon"})
-                    </label>
+        <div id="menu-toggle">
+            <a href="@Url.Action("SobreNos","SobreNos")">
+                <nav>
+                    <i class="flaticon-black400"></i>
+                    <p>Sobre Nós</p>
+                </nav>
+            </a>
+        </div>
+
+    <img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+
+    <main>
+        <div class="box-login">
+            @using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { @name = "form1", @class = "form-horizontal" }))
+            {
+                <label>
+                    <i class="flaticon-users91"></i>
+                    @Html.TextBoxFor(m => m.User, new { @type = "email", @placeholder = "email", @class = "margin-icon" })
+                </label>
                     <label>
                         <i class="flaticon-key59"></i>
-                        @Html.PasswordFor(m => m.Password, new { @type = "password", @placeholder = "senha", @class="margin-icon" } )
+                        @Html.PasswordFor(m => m.Password, new { @type = "password", @placeholder = "senha", @class = "margin-icon" })
                     </label>
-                    
+
                     <input type="submit" value="entrar" class="tt-upper">
 
 
-                }
-                    
+            }
 
-               
-            </div>
-        </main>
+
+
+        </div>
+    </main>
 
 
 
@@ -40,7 +51,7 @@
             <script>
                 swal("Desculpe", "Usuario Invalido", "error");
             </script>
-            }
-
         }
+
+    }
 

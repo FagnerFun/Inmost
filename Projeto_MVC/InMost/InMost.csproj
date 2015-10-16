@@ -105,10 +105,15 @@
     <Content Include="fonts\flaticon.eot" />
     <Content Include="fonts\flaticon.ttf" />
     <Content Include="fonts\flaticon.woff" />
+    <Content Include="Content\estilo.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\snap.svg-min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Login\Login.cshtml" />
@@ -120,6 +125,7 @@
     <Compile Include="Controllers\EditarPerfilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SobreNosController.cs" />
     <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\HomeDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -132,6 +138,7 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Membros.cs" />
+    <Compile Include="Models\SobreNosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +152,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\EditarPerfil\EditarPerfil.cshtml" />
+    <Content Include="Views\SobreNos\SobreNos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\perfil\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
