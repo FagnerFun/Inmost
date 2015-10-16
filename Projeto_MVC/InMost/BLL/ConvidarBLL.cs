@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,13 +39,13 @@ namespace InMost.BLL
                 string validacao = ValidarDestinatario(destinatario);
                 if (validacao != "")
                     return validacao;
-
-                MailMessage msgEmail = new MailMessage("BAE Inmost", destinatario, "Convite Beta InMost", CarregarCorpoEmail());
+                
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+                MailMessage msgEmail = new MailMessage("xamarin5@lobu.com.br", destinatario, "Convite Beta InMost", CarregarCorpoEmail(destinatario));
                 SmtpClient smtp = new SmtpClient("smtp.lobu.com.br", 587);
-                smtp.EnableSsl = true;
-                NetworkCredential credencial = new NetworkCredential("fagner.muniz@lobu.com.br", "senha");
+                NetworkCredential credencial = new NetworkCredential("xamarin5@lobu.com.br", "lobu2015");
                 smtp.Credentials = credencial;
-                smtp.UseDefaultCredentials = true;
+                smtp.Port = 587;
                 smtp.Send(msgEmail);
 
                 return "";
@@ -55,10 +57,10 @@ namespace InMost.BLL
             
         }
 
-        private string CarregarCorpoEmail()
+        private string CarregarCorpoEmail(string destinatario)
         {
             //criar html de mail
-            return "";
+            return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n seu login é " + destinatario + " sua senha é: " + GerarSenha(10);
         }
 
         private string ValidarDestinatario(string destinatario)

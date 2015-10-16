@@ -20,11 +20,11 @@ namespace InMost.DAO
             {
                 CriarConexao();
                 Abrir();
-                SqlDataAdapter Cmd = new SqlDataAdapter("BuscarMail", con);
+                SqlDataAdapter Cmd = new SqlDataAdapter("BuscaMail", con);
 
                 Cmd.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                Cmd.SelectCommand.Parameters.Add("@EMAIL", SqlDbType.VarChar).Value = email;
+                Cmd.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar).Value = email;
 
                 DataTable data = new DataTable();
 

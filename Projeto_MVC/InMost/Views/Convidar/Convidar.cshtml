@@ -1,0 +1,41 @@
+﻿@model InMost.Models.ConvidarModel
+@{
+    ViewBag.Title = "Convidar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+
+
+
+@using (Html.BeginForm("EnviarMail", "Convidar", FormMethod.Post))
+{
+    <div class="control-label">
+        <div id="formulario" class="col-md-12">
+
+            <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-10">
+                    <label>
+                        @Html.TextBoxFor(m => m.email, new { @placeholder = "email" })
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-3">
+                    <input type="submit"  value="Convidar" />
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+ <br /><br />
+
+
+}
+

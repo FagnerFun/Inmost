@@ -27,20 +27,23 @@
 <button type="button">Editar Perfil</button>
 
 @Html.ActionLink("EditarPerfil", "EditarPerfil", "EditarPerfil")
+@Html.ActionLink("Convidar", "Convidar", "Convidar")
 
 <br />
 
-<table>
-    <th>Nome</th>
-    <th>Apelido</th>
-    <th>foto</th>
-    @foreach (var membro in Model.membros)
-    {
-        <tr>
-            <td>@membro.Nome</td>
-            <td>@membro.Apelido </td>
-            <td>@membro.Url_foto</td>
-        </tr>
-    }
+@*
+    <table>
+        <th>Nome</th>
+        <th>Apelido</th>
+        <th>foto</th>
+        @foreach (var membro in Model.membros)
+        {
+            <tr>
+                <td>@membro.Nome</td>
+                <td>@membro.Apelido </td>
+                <td>@membro.Url_foto</td>
+            </tr>
+        }
 
-</table>
+    </table>
+*@
