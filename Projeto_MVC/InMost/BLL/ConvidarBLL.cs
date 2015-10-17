@@ -32,12 +32,12 @@ namespace InMost.BLL
         /// </summary>
         /// <param name="destinatario">pessoa que recebera o email</param>
         /// <returns>validações no mail, string vazia = sucesso</returns>
-        public string EnviarMail(string destinatario)
+        public int EnviarMail(string destinatario)
         {
             try
             {
-                string validacao = ValidarDestinatario(destinatario);
-                if (validacao != "")
+                int validacao = ValidarDestinatario(destinatario);
+                if (validacao != (int)Mensagens.Ok)
                     return validacao;
                 
                 ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
@@ -48,13 +48,14 @@ namespace InMost.BLL
                 smtp.Port = 587;
                 smtp.Send(msgEmail);
 
-                return "";
+                return validacao;
             }
             catch (Exception e)
             {
-                return e.Message;
+                
             }
-            
+
+            return (int)Mensagens.UsuarioExistente;
         }
 
         private string CarregarCorpoEmail(string destinatario)
@@ -63,21 +64,30 @@ namespace InMost.BLL
             return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n seu login é " + destinatario + " sua senha é: " + GerarSenha(10);
         }
 
-        private string ValidarDestinatario(string destinatario)
+        private int ValidarDestinatario(string destinatario)
         {
             if (string.IsNullOrEmpty(destinatario))
-                return "O campo email é de preenchimento obrigatorio";
+                return  (int)Mensagens.CampoObrigatorio; //"O campo email é de preenchimento obrigatorio";
 
             if (destinatario.Contains("@") && destinatario.Contains("."))
             {
                 ConvidarDAO  DAO = new ConvidarDAO();
                 if (DAO.BuscarEmail(destinatario).Rows.Count > 0)
-                    return "Este usuario já faz parte da BAE Inmost";
+                    return (int)Mensagens.UsuarioExistente;
                 else
-                    return "";
+                    return (int)Mensagens.Ok;
             }
             else
-                return "preencha o campo email corretamente";
+                return (int)Mensagens.CampoObrigatorio;
         }
     }
+}
+
+
+public enum Mensagens
+{
+    Ok,
+    CampoObrigatorio,
+    UsuarioExistente,
+    EmailInvalido
 }

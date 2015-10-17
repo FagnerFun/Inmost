@@ -17,11 +17,18 @@ namespace InMost.Controllers
         }
 
         [HttpPost]
-        public string EnviarMail(ConvidarModel destinatario)
+        public ActionResult EnviarMail(ConvidarModel destinatario)
         {
-            ConvidarBLL bll = new ConvidarBLL();
-            
-            return bll.EnviarMail(destinatario.email); 
+            ConvidarBLL BLL = new ConvidarBLL();
+
+
+            int Validacao = BLL.EnviarMail(destinatario.email);
+            ViewBag.Validacao = Validacao;          
+
+            return View("Convidar",new ConvidarModel()); 
         }
+
+
+       
     }
 }

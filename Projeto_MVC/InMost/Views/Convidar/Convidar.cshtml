@@ -9,7 +9,7 @@
 
 
 
-@using (Html.BeginForm("EnviarMail", "Convidar", FormMethod.Post))
+@using (Html.BeginForm("EnviarMail", "Convidar", FormMethod.Post, new { @id = "FormConvidar" }))
 {
     <div class="control-label">
         <div id="formulario" class="col-md-12">
@@ -17,7 +17,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="col-md-10">
                     <label>
-                        @Html.TextBoxFor(m => m.email, new { @placeholder = "email" })
+                        @Html.TextBoxFor(m => m.email, new { @placeholder = "email" , @type = "email" })
                     </label>
                 </div>
             </div>
@@ -36,6 +36,36 @@
 
  <br /><br />
 
-
 }
 
+@if (ViewBag.Validacao != null)
+{
+   if (ViewBag.Validacao == 0)
+    {
+        <script>
+                swal("Desculpe", "Convite enviado com sucesso", "error");
+        </script>
+        ViewBag.Validacao = 10;
+    }
+    else if (ViewBag.Validacao == 1)
+    {
+        <script>
+                swal("Desculpe", "Campo Obrigatório", "error");
+        </script>
+        ViewBag.Validacao = 10;
+    }
+    else if (ViewBag.Validacao == 2)
+    {
+        <script>
+                swal("Desculpe", "Usuario Inexistente", "error");
+        </script>
+        ViewBag.Validacao = 10;
+    }
+    else if (ViewBag.Validacao == 3)
+    {
+        <script>
+                swal("Desculpe", "E-Mail Invalido", "error");
+        </script>
+        ViewBag.Validacao = 10;
+    }
+}
