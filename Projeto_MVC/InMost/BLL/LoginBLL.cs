@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
 using System.Data;
+using InMost.Component;
 
 namespace InMost.BLL
 {
@@ -24,25 +24,10 @@ namespace InMost.BLL
                 {
                     DataTable data = DAO.EfetuaLogin(LoginModeltoLoginEntity(model));
 
-                    return data.Rows.Count > 0; 
-
-                                         
+                    return data.Rows.Count > 0;           
                 } 
 
             return false;
-        }
-
-        public string MD5(string texto)
-        {
-            MD5CryptoServiceProvider hashMD5 = new MD5CryptoServiceProvider();
-            TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider();
-            des.Key = hashMD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes("BetaInmost"));
-            des.Mode = CipherMode.ECB;
-
-            ICryptoTransform crypt = des.CreateEncryptor();
-
-            byte[] buff = ASCIIEncoding.ASCII.GetBytes(texto);
-            return Convert.ToBase64String(crypt.TransformFinalBlock(buff, 0, buff.Length));
         }
 
 
@@ -50,7 +35,7 @@ namespace InMost.BLL
         {
             LoginEntity entity = new LoginEntity();
             entity.Email = model.User;
-            entity.Senha = MD5(model.Password);
+            entity.Senha = Crypto.MD5(model.Password);
             return entity;
         }
 

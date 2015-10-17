@@ -61,7 +61,7 @@ namespace InMost.BLL
         private string CarregarCorpoEmail(string destinatario)
         {
             //criar html de mail
-            return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n seu login é " + destinatario + " sua senha é: " + GerarSenha(10);
+            return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n você pode acessar sua conta usando seu email, sua senha é: " + GerarSenha(10);
         }
 
         private int ValidarDestinatario(string destinatario)
