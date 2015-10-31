@@ -1,0 +1,106 @@
+﻿@*referenciar model*@
+@{
+    ViewBag.Title = "Foto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<i class="flaticon-menu iconMenu btn-menu"></i>
+<div id="menu-toggle">
+    <a href="@Url.Action("EditarPerfil","EditarPerfil", "EditarPerfil")">
+        <nav style="padding: 0px;">
+            <img src="~/img/perfil/fagner.jpg" alt="user name" class="foto" />
+            <h2 style="padding: 10px 0px;">
+                "Fagner Fun"
+            </h2>
+        </nav>
+    </a>
+    <a href="@Url.Action("foto","foto")">
+        <nav>
+            <i class="flaticon-menu-photo"></i>
+            <p>Fotos</p>
+        </nav>
+    </a>
+    <a href="inmost.html">
+        <nav>
+            <i class="flaticon-menu-inmost"></i>
+            <p>Inmost</p>
+        </nav>
+    </a>
+    <a href="@Url.Action("Convidar","Convidar", "Convidar")">
+        <nav>
+            <i class="flaticon-menu-send"></i>
+            <p>Convidar</p>
+        </nav>
+    </a>
+    <a href="aprovar.html">
+        <nav>
+            <i class="flaticon-like"></i>
+            <p>Aprovar</p>
+        </nav>
+    </a>
+    <a href="sair.html">
+        <nav>
+            <i class="flaticon-control-sair"></i>
+            <p>Sair</p>
+        </nav>
+    </a>
+</div>
+
+<img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+
+<main>
+    <div class="layout">
+
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <div class="people foto-edit" data-id="55">
+                    <img src="~/img/perfil/fagner.jpg" alt="user name" class="foto" />
+                </div>
+                <div class="remove-foto rmv-foto-55" data-id="55">
+                    <p>deseja excluir ?</p>
+                    <button type="text">apagar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <div class="people foto-edit" data-id="56">
+                    <img src="~/img/perfil/fagner.jpg" alt="user name" class="foto" />
+                </div>
+                <div class="remove-foto rmv-foto-56" data-id="56">
+                    <p>deseja excluir ?</p>
+                    <button type="text">apagar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <div class="people foto-edit" data-id="57">
+                    <img src="~/img/perfil/fagner.jpg" alt="user name" class="foto" />
+                </div>
+                <div class="remove-foto rmv-foto-57" data-id="57">
+                    <p>deseja excluir ?</p>
+                    <button type="text">apagar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- adicionar foto -->
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <form action="" method="post" accept-charset="utf-8">
+                    <div class="add-foto">
+                        <input type="file" id="nova-foto" name="foto">
+                        <label for="nova-foto">
+                            <i class="flaticon-menu-photo3"></i>
+                            <p>adicionar foto</p>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+ </main>
