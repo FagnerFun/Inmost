@@ -24,6 +24,8 @@ namespace InMost.BLL
                 {
                     DataTable data = DAO.EfetuaLogin(LoginModeltoLoginEntity(model));
 
+                    if(data.Rows.Count > 0)
+                        model.Novo = (int)data.Rows[0].ItemArray[2];
                     return data.Rows.Count > 0;           
                 } 
 
@@ -36,6 +38,7 @@ namespace InMost.BLL
             LoginEntity entity = new LoginEntity();
             entity.Email = model.User;
             entity.Senha = Crypto.MD5(model.Password);
+            entity.Novo = model.Novo;
             return entity;
         }
 

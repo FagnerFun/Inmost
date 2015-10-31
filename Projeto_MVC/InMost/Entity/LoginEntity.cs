@@ -10,5 +10,6 @@ namespace InMost.Entity
     {
         public string Email { get; set; }
         public string Senha { get; set; }
+        public int Novo { get; set; }
     }
 }

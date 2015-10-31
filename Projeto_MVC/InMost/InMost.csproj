@@ -100,15 +100,23 @@
     <Content Include="Global.asax" />
     <Content Include="img\back.jpg" />
     <Content Include="img\logo.png" />
+    <Content Include="img\perfil\barbara.jpg" />
+    <Content Include="img\perfil\dari.jpg" />
+    <Content Include="img\perfil\fabio.jpg" />
+    <Content Include="img\perfil\fagner.jpg" />
+    <Content Include="img\perfil\fernando.jpg" />
+    <Content Include="img\perfil\will.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\flaticon.eot" />
     <Content Include="fonts\flaticon.ttf" />
     <Content Include="fonts\flaticon.woff" />
     <Content Include="Content\estilo.css.map" />
+    <None Include="Properties\PublishProfiles\Inmost.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\convidar.js" />
+    <Content Include="Scripts\galeria.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
@@ -120,6 +128,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\snap.svg-min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\toggle.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
@@ -129,8 +138,10 @@
     <Compile Include="BLL\HomeBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\NotificacaoBLL.cs" />
+    <Compile Include="Component\Crypto.cs" />
     <Compile Include="Controllers\ConvidarController.cs" />
     <Compile Include="Controllers\EditarPerfilController.cs" />
+    <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SobreNosController.cs" />
@@ -166,6 +177,7 @@
     <Content Include="Views\EditarPerfil\EditarPerfil.cshtml" />
     <Content Include="Views\SobreNos\SobreNos.cshtml" />
     <Content Include="Views\Convidar\Convidar.cshtml" />
+    <Content Include="Views\Foto\Foto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,7 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\perfil\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

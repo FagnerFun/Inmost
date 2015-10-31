@@ -1,50 +1,138 @@
 ﻿@model InMost.Models.HomeModel
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<i class="flaticon-menu iconMenu btn-menu"></i>
+<div id="menu-toggle">
+       <a href="@Url.Action("EditarPerfil","EditarPerfil", "EditarPerfil")">
+            <nav style="padding: 0px;">
+                <img src= @Model.Url_foto alt="user name" class="foto" />
+                <h2 style="padding: 10px 0px;">
+                   @Model.Nome  @Model.Apelido 
+                </h2>
+            </nav>
+        </a>
+    <a href="@Url.Action("foto","foto")">
+        <nav>
+            <i class="flaticon-menu-photo"></i>
+            <p>Fotos</p>
+        </nav>
+    </a>
+        <a href="inmost.html">
+            <nav>
+                <i class="flaticon-menu-inmost"></i>
+                <p>Inmost</p>
+            </nav>
+        </a>
+        <a href="@Url.Action("Convidar","Convidar", "Convidar")">
+            <nav>
+                <i class="flaticon-menu-send"></i>
+                <p>Convidar</p>
+            </nav>
+        </a>
+        <a href="aprovar.html">
+            <nav>
+                <i class="flaticon-like"></i>
+                <p>Aprovar</p>
+            </nav>
+        </a>
+        <a href="sair.html">
+            <nav>
+                <i class="flaticon-control-sair"></i>
+                <p>Sair</p>
+            </nav>
+        </a>
+</div>
 
-<br /><br /><br />
+    <img src="~/img/logo.png" alt="Beta Inmost" class="logo">
+
+<main>
+    <div class="layout">
+
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <a href="" title="ver perfil">
+                    <div class="people">
+                        <h3 class="name">Barbara Tadaiesk</h3>
+                        <img src="~/img/perfil/barbara.jpg" alt="user name" class="foto" />
+                        <div class="perfil">
+                            <p>ver perfil</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="interesses int-10">
+                    <!-- 10 = ID -->
+                    <form action="">
+                        <input type="checkbox" id="1003" name="interesses[]">
+                        <label for="1003">
+                            <i class="flaticon-int-bar"></i> Bar
+                        </label>
+                        <input type="checkbox" id="1001" name="interesses[]">
+                        <label for="1001">
+                            <i class="flaticon-int-motel"></i> Motel
+                        </label>
+                        <button type="submit">enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="options">
+                <i class="flaticon-like btn-aceita" data-id="10"></i><!-- 10 = ID -->
+                <i class="flaticon-deslike btn-rejeita" data-id="10"></i><!-- 10 = ID -->
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3 box-people">
+            <div class="grid">
+                <a href="" title="ver perfil">
+                    <div class="people">
+                        <h3 class="name">Dariene</h3>
+                        <img src="~/img/perfil/dari.jpg" alt="user name" class="foto" />
+                        <div class="perfil">
+                            <p>ver perfil</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="interesses int-20">
+                    <!-- 20 = ID -->
+                    <form action="">
+
+                        <input type="checkbox" id="2002" name="interesses[]"><!-- id = id_pessoa+id_interesse -->
+                        <label for="2002">
+                            <i class="flaticon-int-restaurant"></i> Restaurante
+                        </label>
+                        <input type="checkbox" id="2001" name="interesses[]"><!-- id = id_pessoa+id_interesse -->
+                        <label for="2001">
+                            <i class="flaticon-int-motel"></i> Motel
+                        </label>
+                        <button type="submit">enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="options">
+                <i class="flaticon-like btn-aceita" data-id="20"></i><!-- 20 = ID -->
+                <i class="flaticon-deslike btn-rejeita" data-id="20"></i><!-- 20 = ID -->
+            </div>
+        </div>
 
 
-<p>Apelido</p>
-
-@Html.TextBoxFor(m => m.Apelido)
-
-<br />
-<br /><br />
-<p>Nome</p>
-
-@Html.TextBoxFor(m => m.Nome)
-<br /><br /><br />
-<p>Foto do cara</p>
-
-@Html.TextBoxFor(m => m.Url_foto)
+    </div>
 
 
-<button type="button">Encerrar</button>
-<br />
 
-<button type="button">Editar Perfil</button>
+    @*
+        <table>
+            <th>Nome</th>
+            <th>Apelido</th>
+            <th>foto</th>
+            @foreach (var membro in Model.membros)
+            {
+                <tr>
+                    <td>@membro.Nome</td>
+                    <td>@membro.Apelido </td>
+                    <td>@membro.Url_foto</td>
+                </tr>
+            }
 
-@Html.ActionLink("EditarPerfil", "EditarPerfil", "EditarPerfil")
-<br />
-
-@Html.ActionLink("Convidar", "Convidar", "Convidar")
-
-<br />
-
-
-    <table>
-        <th>Nome</th>
-        <th>Apelido</th>
-        <th>foto</th>
-        @foreach (var membro in Model.membros)
-        {
-            <tr>
-                <td>@membro.Nome</td>
-                <td>@membro.Apelido </td>
-                <td>@membro.Url_foto</td>
-            </tr>
-        }
-
-    </table>
+        </table>
+    *@

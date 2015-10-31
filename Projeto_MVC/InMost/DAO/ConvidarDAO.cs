@@ -10,10 +10,6 @@ namespace InMost.DAO
 {
     class ConvidarDAO : Connection
     {
-        private object sqlDbType;
-
-        public object SqlAdapter { get; private set; }
-
         public DataTable BuscarEmail(string email)
         {
             try
@@ -41,6 +37,28 @@ namespace InMost.DAO
 
 
             return null;
+        }
+
+        public void CadastrarLogin(string destinatario, string senha)
+        {
+            try
+            {
+                CriarConexao();
+                Abrir();
+                SqlCommand Cmd = new SqlCommand("InserirMail", con);
+
+                Cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                Cmd.Parameters.Add("@USUARIO", SqlDbType.VarChar).Value = destinatario;
+                Cmd.Parameters.Add("@SENHA", SqlDbType.VarChar).Value = senha;
+                Cmd.ExecuteNonQuery();
+                
+
+            }
+            catch (Exception e)
+            {
+                return;
+            }
         }
 
     }

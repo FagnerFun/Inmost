@@ -22,8 +22,8 @@ namespace InMost.BLL
             if(data != null && lista != null)
                 if (data.Rows.Count > 0)
                 {
-                    model.Apelido = data.Rows[0].ItemArray[0].ToString();
-                    model.Nome = data.Rows[0].ItemArray[1].ToString();
+                    model.Nome = data.Rows[0].ItemArray[0].ToString();
+                    model.Apelido = data.Rows[0].ItemArray[1].ToString();
                     model.Url_foto = data.Rows[0].ItemArray[2].ToString();
 
                     foreach(DataRow linha in lista.Rows  )

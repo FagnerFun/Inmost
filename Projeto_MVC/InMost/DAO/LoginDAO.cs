@@ -12,8 +12,6 @@ namespace InMost.DAO
 {
     class LoginDAO : Connection
     {
-        private object sqlDbType;
-
         public object SqlAdapter { get; private set; }
 
         public DataTable EfetuaLogin(LoginEntity entity)

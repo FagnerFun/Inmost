@@ -1,4 +1,5 @@
-﻿using InMost.DAO;
+﻿using InMost.Component;
+using InMost.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,14 +40,17 @@ namespace InMost.BLL
                 int validacao = ValidarDestinatario(destinatario);
                 if (validacao != (int)Mensagens.Ok)
                     return validacao;
-                
+
+                string senha = GerarSenha(10);
                 ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
-                MailMessage msgEmail = new MailMessage("xamarin5@lobu.com.br", destinatario, "Convite Beta InMost", CarregarCorpoEmail(destinatario));
+                MailMessage msgEmail = new MailMessage("xamarin5@lobu.com.br", destinatario, "Convite Beta InMost", CarregarCorpoEmail(destinatario, senha));
                 SmtpClient smtp = new SmtpClient("smtp.lobu.com.br", 587);
                 NetworkCredential credencial = new NetworkCredential("xamarin5@lobu.com.br", "lobu2015");
                 smtp.Credentials = credencial;
                 smtp.Port = 587;
                 smtp.Send(msgEmail);
+
+                SalvarLogin(destinatario, senha);
 
                 return validacao;
             }
@@ -58,10 +62,16 @@ namespace InMost.BLL
             return (int)Mensagens.UsuarioExistente;
         }
 
-        private string CarregarCorpoEmail(string destinatario)
+        private void SalvarLogin(string destinatario, string senha)
+        {
+            ConvidarDAO DAO = new ConvidarDAO();
+            DAO.CadastrarLogin(destinatario, Crypto.MD5(senha));
+        }
+
+        private string CarregarCorpoEmail(string destinatario, string senha)
         {
             //criar html de mail
-            return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n você pode acessar sua conta usando seu email, sua senha é: " + GerarSenha(10);
+            return "Bem vindo caro, vc foi convidado para rede social privada BAE Inmost \r\n você pode acessar sua conta usando seu email, sua senha é: " + senha;
         }
 
         private int ValidarDestinatario(string destinatario)
