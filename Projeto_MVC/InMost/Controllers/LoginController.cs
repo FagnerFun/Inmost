@@ -24,7 +24,10 @@ namespace InMost.Controllers
             {
                 ViewBag.Validacao = true;
                 Session["USR"] = login;
-                return RedirectToAction("Index", "Home");
+                if(login.Novo == 0)
+                    return RedirectToAction("Index", "Home");
+                else
+                    return RedirectToAction("EditarPerfil", "EditarPerfil");
             }
 
 

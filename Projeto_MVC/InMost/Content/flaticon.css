@@ -11,145 +11,157 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-font-style: normal;
-}.flaticon-add183:before {
+	font-style: normal;
+}.flaticon-black400:before {
 	content: "\e000";
 }
-.flaticon-add186:before {
+.flaticon-static-couple:before {
 	content: "\e001";
 }
-.flaticon-black400:before {
+.flaticon-respost:before {
 	content: "\e002";
 }
-.flaticon-bookmark45:before {
+.flaticon-chat75:before {
 	content: "\e003";
 }
-.flaticon-button44:before {
+.flaticon-chat76:before {
 	content: "\e004";
 }
-.flaticon-camera77:before {
+.flaticon-checklist:before {
 	content: "\e005";
 }
-.flaticon-chat75:before {
+.flaticon-control-add:before {
 	content: "\e006";
 }
-.flaticon-chat76:before {
+.flaticon-control-block:before {
 	content: "\e007";
 }
-.flaticon-check52:before {
+.flaticon-control-close:before {
 	content: "\e008";
 }
-.flaticon-checklist4:before {
+.flaticon-control-config:before {
 	content: "\e009";
 }
-.flaticon-close47:before {
+.flaticon-control-del:before {
 	content: "\e00a";
 }
-.flaticon-create3:before {
+.flaticon-control-download:before {
 	content: "\e00b";
 }
-.flaticon-do10:before {
+.flaticon-control-edit:before {
 	content: "\e00c";
 }
-.flaticon-download164:before {
+.flaticon-control-favorite:before {
 	content: "\e00d";
 }
-.flaticon-favorite21:before {
+.flaticon-control-grid:before {
 	content: "\e00e";
 }
-.flaticon-favorite22:before {
+.flaticon-control-grid2:before {
 	content: "\e00f";
 }
-.flaticon-images10:before {
+.flaticon-control-left:before {
 	content: "\e010";
 }
-.flaticon-key59:before {
+.flaticon-control-location:before {
 	content: "\e011";
 }
-.flaticon-keyboard53:before {
+.flaticon-control-ok:before {
 	content: "\e012";
 }
-.flaticon-left216:before {
+.flaticon-control-right:before {
 	content: "\e013";
 }
-.flaticon-list61:before {
+.flaticon-users-static:before {
 	content: "\e014";
 }
-.flaticon-list89:before {
+.flaticon-int-bar:before {
 	content: "\e015";
 }
-.flaticon-login10:before {
+.flaticon-favorite:before {
 	content: "\e016";
 }
-.flaticon-logout11:before {
+.flaticon-favorite2:before {
 	content: "\e017";
 }
-.flaticon-male226:before {
+.flaticon-int-restaurant:before {
 	content: "\e018";
 }
-.flaticon-map103:before {
+.flaticon-home:before {
 	content: "\e019";
 }
-.flaticon-menu55:before {
+.flaticon-menu-photo3:before {
 	content: "\e01a";
 }
-.flaticon-network3:before {
+.flaticon-int-cinema:before {
 	content: "\e01b";
 }
-.flaticon-network65:before {
+.flaticon-int-motel:before {
 	content: "\e01c";
 }
-.flaticon-paper11:before {
+.flaticon-int-motel2:before {
 	content: "\e01d";
 }
-.flaticon-pen29:before {
+.flaticon-int-motel3:before {
 	content: "\e01e";
 }
-.flaticon-photo212:before {
+.flaticon-key:before {
 	content: "\e01f";
 }
-.flaticon-photos13:before {
+.flaticon-list-users:before {
 	content: "\e020";
 }
-.flaticon-profile11:before {
+.flaticon-control-entrar:before {
 	content: "\e021";
 }
-.flaticon-rate:before {
+.flaticon-control-sair:before {
 	content: "\e022";
 }
-.flaticon-rightarrow97:before {
+.flaticon-menu-inmost:before {
 	content: "\e023";
 }
-.flaticon-rubbish:before {
+.flaticon-int-balada:before {
 	content: "\e024";
 }
-.flaticon-settings49:before {
+.flaticon-menu-photo2:before {
 	content: "\e025";
 }
-.flaticon-show6:before {
+.flaticon-menu-send:before {
 	content: "\e026";
 }
-.flaticon-socialnetwork179:before {
+.flaticon-menu:before {
 	content: "\e027";
 }
-.flaticon-thumb32:before {
+.flaticon-network3:before {
 	content: "\e028";
 }
-.flaticon-thumb33:before {
+.flaticon-network65:before {
 	content: "\e029";
 }
-.flaticon-underline6:before {
+.flaticon-pessoal-static:before {
 	content: "\e02a";
 }
-.flaticon-user160:before {
+.flaticon-menu-photo:before {
 	content: "\e02b";
 }
-.flaticon-users91:before {
+.flaticon-sys-entrar2:before {
 	content: "\e02c";
 }
-.flaticon-web38:before {
+.flaticon-like:before {
 	content: "\e02d";
 }
-.flaticon-whatsapp2:before {
+.flaticon-deslike:before {
 	content: "\e02e";
+}
+.flaticon-user-photo:before {
+	content: "\e02f";
+}
+.flaticon-user:before {
+	content: "\e030";
+}
+.flaticon-users:before {
+	content: "\e031";
+}
+.flaticon-whatsapp:before {
+	content: "\e032";
 }
