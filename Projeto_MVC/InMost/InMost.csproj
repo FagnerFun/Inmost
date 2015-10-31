@@ -129,6 +129,7 @@
     <Compile Include="BLL\HomeBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\NotificacaoBLL.cs" />
+    <Compile Include="Component\Crypto.cs" />
     <Compile Include="Controllers\ConvidarController.cs" />
     <Compile Include="Controllers\EditarPerfilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
