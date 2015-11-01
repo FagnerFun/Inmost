@@ -95,6 +95,7 @@
     <Content Include="Content\flaticon.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\sweetalert.css" />
+    <Content Include="fonts\flaticon.html" />
     <Content Include="fonts\flaticon.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -153,6 +154,7 @@
     <Compile Include="Entity\HomeEntity.cs" />
     <Compile Include="Entity\LoginEntity.cs" />
     <Compile Include="Entity\NotificacaoEntity.cs" />
+    <Compile Include="Entity\Preferencias.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

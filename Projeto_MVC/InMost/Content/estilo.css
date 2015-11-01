@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* INMOST - Betas Curitiba*/
 input {
   color: inherit;
@@ -11,7 +11,7 @@ input {
 
 body, html, main {
   height: 100%;
-  overflow: hidden; }
+ }
 
 body {
   background: url(../img/back.jpg) repeat;
@@ -98,7 +98,7 @@ input[type="submit"] {
   width: 150px;
   background: #e74c3c;
   border-right: #c0392b 5px solid;
-  position: absolute;
+  position: fixed;
   top: 0px;
   z-index: 2;
   padding-top: 60px;
@@ -279,11 +279,10 @@ main {
     padding: 5px; }
 
 footer {
-  position: absolute;
+  position: relative;
   background-color: #c0392b;
   width: 100%;
-  height: auto;
-  bottom: 0;
+  height: 50px;
   display: block; }
   footer p {
     color: #ffffff;

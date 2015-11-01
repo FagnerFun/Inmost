@@ -37,6 +37,20 @@ namespace InMost.BLL
                             model.membros = new List<Membros>();
                         model.membros.Add(m);
                     }
+
+                    DataTable preferencia = DAO.CarregaPreferencia();
+
+                    foreach(DataRow linha in preferencia.Rows)
+                    {
+                        Preferencias pref = new Preferencias();
+                        pref.Codigo = (int)linha.ItemArray[0];
+                        pref.Descricao = linha.ItemArray[1].ToString();
+                        pref.Icone = linha.ItemArray[2].ToString();
+                        if (model.interesse == null)
+                            model.interesse = new List<Preferencias>();
+                        model.interesse.Add(pref);
+                    }
+
                     return model;
                 }
 

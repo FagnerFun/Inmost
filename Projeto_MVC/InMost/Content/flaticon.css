@@ -11,7 +11,7 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-	font-style: normal;
+font-style: normal;
 }.flaticon-black400:before {
 	content: "\e000";
 }
@@ -102,7 +102,7 @@
 .flaticon-int-motel2:before {
 	content: "\e01d";
 }
-.flaticon-int-motel3:before {
+.flaticon-int-restaurante2:before {
 	content: "\e01e";
 }
 .flaticon-key:before {

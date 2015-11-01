@@ -30,4 +30,3 @@ C:\Users\Fer\Desktop\Inmost\Projeto_MVC\InMost\bin\System.Web.Helpers.xml
 C:\Users\Fer\Desktop\Inmost\Projeto_MVC\InMost\bin\System.Web.Mvc.xml
 C:\Users\Fer\Desktop\Inmost\Projeto_MVC\InMost\obj\Debug\InMost.dll
 C:\Users\Fer\Desktop\Inmost\Projeto_MVC\InMost\obj\Debug\InMost.pdb
-C:\Users\Fer\Desktop\Inmost\Projeto_MVC\InMost\obj\Debug\InMost.csprojResolveAssemblyReference.cache

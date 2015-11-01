@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InMost.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace InMost.Models
         public string Nome { get; set; }
         public string Apelido { get; set; }
         public string Url_foto { get; set; }
+
+        public List<Preferencias> interesse { get; set; }
 
         public List<Membros> membros { get; set; }
 

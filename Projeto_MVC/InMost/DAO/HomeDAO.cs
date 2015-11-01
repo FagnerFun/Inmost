@@ -69,7 +69,32 @@ namespace InMost.DAO
             return null;
         }
 
+        public DataTable CarregaPreferencia()
+        {
+            try
+            {
+                CriarConexao();
+                Abrir();
 
+                SqlDataAdapter Cmd = new SqlDataAdapter("BuscaInteresses", con);
+                Cmd.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DataTable lista = new DataTable();
+                Cmd.Fill(lista);
+
+                Fechar();
+
+                return lista;
+
+            }
+            catch (Exception e)
+            {
+            }
+            finally
+            {
+                Fechar();
+            }
+            return null;
+        }
 
 
     }

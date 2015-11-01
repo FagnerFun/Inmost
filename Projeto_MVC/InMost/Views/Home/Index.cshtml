@@ -50,39 +50,57 @@
 <main>
     <div class="layout">
 
+@if (Model.membros != null)
+{
+    int i = 1;
+    foreach (var membro in Model.membros)
+    {
+        
         <div class="col-xs-6 col-md-3 box-people">
             <div class="grid">
                 <a href="" title="ver perfil">
                     <div class="people">
-                        <h3 class="name">Barbara Tadaiesk</h3>
-                        <img src="~/img/perfil/barbara.jpg" alt="user name" class="foto" />
+                        <h3 class="name">  @membro.Nome 
+                        </h3>
+                        <img src= @membro.Url_foto alt="user name" class="foto" />
                         <div class="perfil">
                             <p>ver perfil</p>
                         </div>
                     </div>
                 </a>
-                <div class="interesses int-10">
+                <div class="interesses int-@i">
                     <!-- 10 = ID -->
                     <form action="">
-                        <input type="checkbox" id="1003" name="interesses[]">
-                        <label for="1003">
-                            <i class="flaticon-int-bar"></i> Bar
+
+                      @foreach (var interesse in Model.interesse)
+                       {
+
+                         <input type="checkbox" id=@i@interesse.Codigo name="interesses[]">
+                        <label for=@i@interesse.Codigo>
+                            <i class=@interesse.Icone></i> @interesse.Descricao
                         </label>
-                        <input type="checkbox" id="1001" name="interesses[]">
-                        <label for="1001">
-                            <i class="flaticon-int-motel"></i> Motel
-                        </label>
+
+                       }
+
+                      
+
                         <button type="submit">enviar</button>
                     </form>
                 </div>
             </div>
             <div class="options">
-                <i class="flaticon-like btn-aceita" data-id="10"></i><!-- 10 = ID -->
-                <i class="flaticon-deslike btn-rejeita" data-id="10"></i><!-- 10 = ID -->
+                <i class="flaticon-like btn-aceita" data-id= @i></i><!-- 10 = ID -->
+                <i class="flaticon-deslike btn-rejeita" ></i><!-- 10 = ID -->
             </div>
         </div>
 
-        <div class="col-xs-6 col-md-3 box-people">
+        i++;
+    }
+}
+
+
+
+        @*<div class="col-xs-6 col-md-3 box-people">
             <div class="grid">
                 <a href="" title="ver perfil">
                     <div class="people">
@@ -113,26 +131,34 @@
                 <i class="flaticon-like btn-aceita" data-id="20"></i><!-- 20 = ID -->
                 <i class="flaticon-deslike btn-rejeita" data-id="20"></i><!-- 20 = ID -->
             </div>
-        </div>
+        </div>*@
 
 
     </div>
 
 
 
-    @*
-        <table>
-            <th>Nome</th>
-            <th>Apelido</th>
-            <th>foto</th>
-            @foreach (var membro in Model.membros)
-            {
-                <tr>
-                    <td>@membro.Nome</td>
-                    <td>@membro.Apelido </td>
-                    <td>@membro.Url_foto</td>
-                </tr>
-            }
+   
+        @*<table>
+        <th>Nome</th>
+        <th>Apelido</th>
+        <th>foto</th>
 
-        </table>
-    *@
+
+
+        @if (Model.membros != null)
+        {
+         foreach (var membro in Model.membros)
+         {
+            <tr>
+                <td>@membro.Nome</td>
+                <td>@membro.Apelido </td>
+                <td>@membro.Url_foto</td>
+            </tr>
+         }
+        }
+
+
+
+    </table>
+        *@
